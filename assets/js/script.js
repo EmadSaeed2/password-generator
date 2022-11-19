@@ -27,25 +27,40 @@ function getPasswordOptions() {
 
   getPasswordLength();
 
-  /* INCLUDE NUMERIC */
-  var includeNumeric = confirm('Click OK, if you want the password to include Numbers.');
-  if (includeNumeric) passwordOptions.numeric = true;
+  /* GET CHARACTERS TYPE */
 
-  /* INCLUDE SPECIAL CHARACTERS */
-  var includeSpecialCharacters = confirm('Click OK, if you want the password to include Special Characters.');
-  if (includeSpecialCharacters) passwordOptions.specialChars = true;
+  function getCharactersType() {
 
-  /* INCLUDE LOWERCASE */
-  var includeLowercase = confirm('Click OK, if you want the password to include Lowercase Characters.');
-  if (includeLowercase) passwordOptions.lowerCase = true;
+    /* INCLUDE NUMERIC */
+    var includeNumeric = confirm('Click OK, if you want the password to include Numbers.');
+    if (includeNumeric) passwordOptions.numeric = true;
 
-  /* INCLUDE UPPERCASE */
-  var includeUppercase = confirm('Click OK, if you want the password to include Uppercase Characters.');
-  if (includeUppercase) passwordOptions.upperCase = true;
+    /* INCLUDE SPECIAL CHARACTERS */
+    var includeSpecialCharacters = confirm('Click OK, if you want the password to include Special Characters.');
+    if (includeSpecialCharacters) passwordOptions.specialChars = true;
+
+    /* INCLUDE LOWERCASE */
+    var includeLowercase = confirm('Click OK, if you want the password to include Lowercase Characters.');
+    if (includeLowercase) passwordOptions.lowerCase = true;
+
+    /* INCLUDE UPPERCASE */
+    var includeUppercase = confirm('Click OK, if you want the password to include Uppercase Characters.');
+    if (includeUppercase) passwordOptions.upperCase = true;
+  }
+
+  getCharactersType();
+
+
+
+
+
 
   console.log(passwordOptions);
   return passwordOptions;
 }
+
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
