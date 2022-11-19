@@ -28,6 +28,14 @@ function getPasswordOptions() {
 
   getPasswordLength();
 
+  /* INCLUDE NUMERIC */
+  var includeNumeric = confirm('Click OK, if you want the password to include Numbers.');
+  if (includeNumeric) passwordOptions.numeric = true;
+
+
+
+  console.log(passwordOptions);
+  return passwordOptions;
 }
 
 // Function for getting a random element from an array
