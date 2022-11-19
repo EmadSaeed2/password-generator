@@ -24,11 +24,9 @@ function getPasswordOptions() {
       }
     }
   }
-
   getPasswordLength();
 
   /* GET CHARACTERS TYPE */
-
   function getCharactersType() {
 
     /* INCLUDE NUMERIC */
@@ -47,7 +45,6 @@ function getPasswordOptions() {
     var includeUppercase = confirm('Click OK, if you want the password to include Uppercase Characters.');
     if (includeUppercase) passwordOptions.upperCase = true;
   }
-
   getCharactersType();
 
   /* VALIDATE CHARACTERS TYPE CHOICES */
@@ -56,22 +53,19 @@ function getPasswordOptions() {
     getCharactersType();
   }
 
-
   console.log(passwordOptions);
   return passwordOptions;
 }
 
-
-
-
-// Function for getting a random element from an array
+/* FUNCTION FOR GETTING A RANDOM ELEMENT FROM AN ARRAY */
 function getRandom(arr) {
-
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
+
 }
 
 // Get references to the #generate element
