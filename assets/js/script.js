@@ -1,4 +1,3 @@
-
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -32,7 +31,9 @@ function getPasswordOptions() {
   var includeNumeric = confirm('Click OK, if you want the password to include Numbers.');
   if (includeNumeric) passwordOptions.numeric = true;
 
-
+  /* INCLUDE SPECIAL CHARACTERS */
+  var includeSpecialCharacters = confirm('Click OK, if you want the password to include Special Characters.');
+  if (includeSpecialCharacters) passwordOptions.specialChars = true;
 
   console.log(passwordOptions);
   return passwordOptions;
