@@ -57,13 +57,14 @@ function getPasswordOptions() {
   return passwordOptions;
 }
 
+var choicesArr = [];
+
 /* CREATEING ARRAY FOR USER CHARACTERS CHOICES */
 function createChoicesArr() {
-  var choicesArr = [];
-  if (passwordOptions.numeric) choicesArr = choicesArr.concat(numericCharacters);
-  if (passwordOptions.specialChars) choicesArr = choicesArr.concat(specialCharacters);
-  if (passwordOptions.lowerCase) choicesArr = choicesArr.concat(lowerCasedCharacters);
-  if (passwordOptions.upperCase) choicesArr = choicesArr.concat(upperCasedCharacters);
+  if (passwordOptions.numeric) choicesArr = numericCharacters.concat(choicesArr);
+  if (passwordOptions.specialChars) choicesArr = specialCharacters.concat(choicesArr);
+  if (passwordOptions.lowerCase) choicesArr = lowerCasedCharacters.concat(choicesArr);
+  if (passwordOptions.upperCase) choicesArr = upperCasedCharacters.concat(choicesArr);
 
   return choicesArr;
 }
@@ -79,6 +80,12 @@ function generatePassword() {
 
   console.log(createChoicesArr());
 
+  // Reset data for another go
+  choicesArr.length = [];
+  passwordOptions.numeric = false;
+  passwordOptions.specialChars = false;
+  passwordOptions.lowerCase = false;
+  passwordOptions.upperCase = false;
 }
 
 // Get references to the #generate element
