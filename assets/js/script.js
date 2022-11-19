@@ -2,6 +2,32 @@
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  var passwordOptions = {
+    passLength: 0,
+    numeric: false,
+    specialChars: false,
+    lowerCase: false,
+    upperCase: false,
+  }
+
+  /* GET PASSWORD LENGTH */
+  function getPasswordLength() {
+    var passwordLength = prompt('How many characters would you like your password to contain?\nPlease choose a number of at least 10 characters but no more than 64.')
+    console.log(passwordLength);
+
+    // validate passwordLength
+    if (passwordLength !== null) {
+      if (passwordLength < 10 || passwordLength > 64 || isNaN(passwordLength)) {
+        alert('Please choose a number of at least 10 characters but no more than 64.');
+        getPasswordLength();
+      } else {
+        passwordOptions.passLength = passwordLength;
+      }
+    }
+  }
+
+  getPasswordLength();
+
 }
 
 // Function for getting a random element from an array
@@ -11,7 +37,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+  getPasswordOptions();
 }
 
 // Get references to the #generate element
