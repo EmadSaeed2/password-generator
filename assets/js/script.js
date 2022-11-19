@@ -1,13 +1,13 @@
+var passwordOptions = {
+  passLength: 0,
+  numeric: false,
+  specialChars: false,
+  lowerCase: false,
+  upperCase: false,
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
-  var passwordOptions = {
-    passLength: 0,
-    numeric: false,
-    specialChars: false,
-    lowerCase: false,
-    upperCase: false,
-  }
 
   /* GET PASSWORD LENGTH */
   function getPasswordLength() {
@@ -57,6 +57,17 @@ function getPasswordOptions() {
   return passwordOptions;
 }
 
+/* CREATEING ARRAY FOR USER CHARACTERS CHOICES */
+function createChoicesArr() {
+  var choicesArr = [];
+  if (passwordOptions.numeric) choicesArr = choicesArr.concat(numericCharacters);
+  if (passwordOptions.specialChars) choicesArr = choicesArr.concat(specialCharacters);
+  if (passwordOptions.lowerCase) choicesArr = choicesArr.concat(lowerCasedCharacters);
+  if (passwordOptions.upperCase) choicesArr = choicesArr.concat(upperCasedCharacters);
+
+  return choicesArr;
+}
+
 /* FUNCTION FOR GETTING A RANDOM ELEMENT FROM AN ARRAY */
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -65,6 +76,8 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
+
+  console.log(createChoicesArr());
 
 }
 
