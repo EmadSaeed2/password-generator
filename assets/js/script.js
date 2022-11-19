@@ -50,9 +50,11 @@ function getPasswordOptions() {
 
   getCharactersType();
 
-
-
-
+  /* VALIDATE CHARACTERS TYPE CHOICES */
+  if (!passwordOptions.numeric && !passwordOptions.specialChars && !passwordOptions.lowerCase && !passwordOptions.upperCase) {
+    alert("Oops! You need to choose at least one type for the password characters!")
+    getCharactersType();
+  }
 
 
   console.log(passwordOptions);
