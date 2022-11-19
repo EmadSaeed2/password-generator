@@ -39,6 +39,10 @@ function getPasswordOptions() {
   var includeLowercase = confirm('Click OK, if you want the password to include Lowercase Characters.');
   if (includeLowercase) passwordOptions.lowerCase = true;
 
+  /* INCLUDE UPPERCASE */
+  var includeUppercase = confirm('Click OK, if you want the password to include Uppercase Characters.');
+  if (includeUppercase) passwordOptions.upperCase = true;
+
   console.log(passwordOptions);
   return passwordOptions;
 }
