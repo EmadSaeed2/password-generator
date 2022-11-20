@@ -53,7 +53,7 @@ function getPasswordOptions() {
     /* VALIDATE CHARACTERS TYPE CHOICES */
     if (!passwordOptions.numeric && !passwordOptions.specialChars && !passwordOptions.lowerCase && !passwordOptions.upperCase) {
       alert("Oops! You need to choose at least one type for the password characters!")
-      // Repeat getCharactersTypes if user did not any choice
+      // Repeat getCharactersTypes if user did not select any characters option
       getCharactersTypes();
     }
 
@@ -79,6 +79,7 @@ function getRandom(arr) {
 
 /* FUNCTION TO GENERATE PASSWORD WITH USER INPUT */
 function generatePassword() {
+
   getPasswordOptions();
 
   var selectedChractersArrData = fillSelectedChractersArr();
@@ -91,7 +92,7 @@ function generatePassword() {
   }
 
   /* RESET DATA FOR ANOTHER GO */
-  selectedChractersArr.length = [];
+  selectedChractersArr = [];
   passwordOptions.passLength = 0;
   passwordOptions.numeric = false;
   passwordOptions.specialChars = false;
